@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: rgb(90, 90, 90);
+}
+
+.logo__img {
+    margin-right: 4px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin: 0 18px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li a {
+    text-decoration: none;
+    color: gray;
+    margin: 0 32px;
+}
+
+/* Main */
+
+main {
+    height: calc(100vh - 100px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 24px;
+}
+
+.main__description {
+    width: 55%;
+}
+
+.main__description h1 {
+    color: rgb(85, 85, 85);
+    margin-bottom: 6px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.main__description h3 {
+    color: rgb(168, 168, 168);
+    margin-bottom: 50px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.laptop {
+    width: 45%;
+}
+
+.main__img {
+    width: 100%;
+}
+
+button {
+    padding: 10px 30px;
+    border: 2px solid #c36cbb;
+    border-radius: 2px;
+}
+
+.btn {
+    color: #c36cbb;
+    background-color: transparent;
+    margin-right: 14px;
+}
+
+.btn__bold {
+    padding: 10px 24px;
+    background-color: #c36cbb;
+    color: #fff;
+}
+
+.laptop__select {
+    width: 200px;
+    height: 16px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 85px;
+    bottom: 15%;
+}
+
+/* Background circles */
+
+.big__circle {
+    width: 500px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.mid__circle {
+    width: 400px;
+    position: absolute;
+    top: 200px;
+    right: 30%;
+}
+
+.small__circle {
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+}
