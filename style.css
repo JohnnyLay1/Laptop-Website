@@ -7,8 +7,18 @@
     font-family: 'Poppins', sans-serif;
 }
 
+a:hover {
+    cursor: pointer;
+    color: #c36cbb;
+}
+
+body {
+    max-width: 100vw;
+}
+
 .logo {
     display: flex;
+    flex: 1;
     align-items: center;
     color: rgb(90, 90, 90);
 }
@@ -19,107 +29,225 @@
 
 header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    height: 70px;
-    margin: 0 18px;
+    height: 80px;
+    /* margin: 0 18px; */
+    margin: auto;
+    /* padding: 0 56px; */
+    width: 90%;
 }
 
-nav ul {
+nav {
+    flex: 2;
+}
+
+.cart {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.nav__links {
     display: flex;
     list-style: none;
+    justify-content: space-around;
 }
 
-nav li a {
+.nav__link {
     text-decoration: none;
     color: gray;
-    margin: 0 32px;
+    /* margin: 0 100px; */
+    transition: all 300ms ease;
 }
 
 /* Main */
 
+.presentation {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    min-height: 80vh;
+    align-items: center;
+}
+
 main {
     height: calc(100vh - 100px);
-    width: 100%;
     display: flex;
     align-items: center;
-    margin: 0 24px;
+    /* margin: 0 24px; */
+    padding: 0 56px;
 }
 
 .main__description {
-    width: 55%;
+    flex: 1;
 }
 
-.main__description h1 {
+.intro__text h1 {
     color: rgb(85, 85, 85);
     margin-bottom: 6px;
     font-size: 32px;
     font-weight: 500;
 }
 
-.main__description h3 {
+.intro__text h3 {
     color: rgb(168, 168, 168);
     margin-bottom: 50px;
     font-weight: 500;
     font-size: 16px;
 }
 
-.laptop {
-    width: 45%;
+/* .laptop {
+    width: 40%;
 }
 
 .main__img {
     width: 100%;
+} */
+
+.laptop {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+}
+
+.main__img {
+    height: 100%;
+    filter: drop-shadow(0px 5px 3px black);
+    animation: drop 1.5s ease;
 }
 
 button {
-    padding: 10px 30px;
+    height: 50px;
+    width: 150px;
     border: 2px solid #c36cbb;
     border-radius: 2px;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c36cbb;
+    color: #fff;
 }
 
 .btn {
     color: #c36cbb;
     background-color: transparent;
     margin-right: 14px;
+    transition: all 300ms ease;
+}
+
+.btn__bold:hover {
+    color: #c36cbb;
+    background-color: transparent;
+    border: #c36cbb 2px solid;
 }
 
 .btn__bold {
-    padding: 10px 24px;
+    /* padding: 10px 24px; */
     background-color: #c36cbb;
     color: #fff;
+    transition: all 300ms ease;
 }
 
-.laptop__select {
+/* .laptop__select {
     width: 200px;
     height: 16px;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    right: 85px;
-    bottom: 15%;
+    right: 20%;
+    bottom: 10%;
+} */
+
+.laptop__select {
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 22%;
+    bottom: 10%;
 }
 
 /* Background circles */
 
 .big__circle {
-    width: 500px;
+    /* width: 500px; */
     position: absolute;
     top: 0;
     right: 0;
     z-index: -1;
+    opacity: 0.5;
+    height: 80%;
 }
 
 .mid__circle {
-    width: 400px;
+    /* width: 400px; */
     position: absolute;
-    top: 200px;
+    top: 35%;
     right: 30%;
+    z-index: -1;
+    opacity: 0.4;
+    height: 60%;
 }
 
 .small__circle {
     width: 300px;
     position: absolute;
     bottom: 0;
-    left: 10%;
+    left: 20%;
+    z-index: -1;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1070px) {
+    .presentation {
+        flex-direction: column;
+    }
+
+    .main__description {
+        text-align: center;
+        margin-top: 24px;
+    }
+
+    
+    .main__img {
+        height: 60vh;
+    }
+
+    .laptop__select {
+        bottom: 5%;
+        right: 50%;
+        /* It doesnt center unless it you transform translate the opposite direction */
+        transform: translate(50%, 5%);
+        width: 40%;
+    }
+
+    .big__circle,
+    .mid__circle,
+    .small__circle {
+        opacity: 0.2;
+    }
+
 }
